@@ -1,37 +1,31 @@
 class Fraction:
 
-  def __init__(self, numerator, denominator):
+    def __init__(self, numerator, denominator):
+        self.numerator = numerator
+        self.denominator = denominator
 
-    self.numerator = numerator
-    self.denominator = denominator
+    def __str__(self):
+        return f"{self.numerator}/{self.denominator}"
 
-  def __str__(self):
+    def __add__(self, other):
+        new_numerator = self.numerator * other.denominator + self.denominator * other.numerator
+        new_denominator = self.denominator * other.denominator
+        return Fraction(new_numerator, new_denominator)
 
-    return f"{self.numerator}/{self.denominator}"
+    def __sub__(self, other):
+        new_numerator = self.numerator * other.denominator - self.denominator * other.numerator
+        new_denominator = self.denominator * other.denominator
+        return Fraction(new_numerator, new_denominator)
 
-  def __add__(self, other):
+    def __mul__(self, other):
+        new_numerator = self.numerator * other.numerator
+        new_denominator = self.denominator * other.denominator
+        return Fraction(new_numerator, new_denominator)
 
-    new_numerator = self.numerator * other.denominator + self.denominator * other.numerator
-    new_denominator = self.denominator * other.denominator
-    return Fraction(new_numerator, new_denominator)
-
-  def __sub__(self, other):
-
-    new_numerator = self.numerator * other.denominator - self.denominator * other.numerator
-    new_denominator = self.denominator * other.denominator
-    return Fraction(new_numerator, new_denominator)
-
-  def __mul__(self, other):
-
-    new_numerator = self.numerator * other.numerator
-    new_denominator = self.denominator * other.denominator
-    return Fraction(new_numerator, new_denominator)
-
-  def __truediv__(self, other):
-
-    new_numerator = self.numerator * other.denominator
-    new_denominator = self.denominator * other.numerator
-    return Fraction(new_numerator, new_denominator)
+    def __truediv__(self, other):
+        new_numerator = self.numerator * other.denominator
+        new_denominator = self.denominator * other.numerator
+        return Fraction(new_numerator, new_denominator)
 
 
 fraction1 = Fraction(1, 2)
@@ -49,6 +43,8 @@ print(f"Сума: {sum_fraction}")
 print(f"Різниця: {difference_fraction}")
 print(f"Добуток: {product_fraction}")
 print(f"Частка: {quotient_fraction}")
+
+
 # Завдання 2
 class Stadium:
 
@@ -60,6 +56,13 @@ class Stadium:
         self.capacity = capacity
 
     def __str__(self):
+        return f"""
+              Назва: {self.name}
+              Дата відкриття: {self.opening_date}
+              Країна: {self.country}
+              Місто: {self.city}
+              Місткість: {self.capacity}
+            """
 
     def __eq__(self, other):
         return self.name == other.name
@@ -80,6 +83,8 @@ print(f"Стадіон 2:\n{stadium2}")
 print(f"Стадіони мають однакові назви? {stadium1 == stadium2}")
 print(f"Місткість стадіону 1 менша, ніж стадіону 2? {stadium1 < stadium2}")
 print(f"Сумарна місткість двох стадіонів: {stadium1 + stadium2}")
+
+
 # Завдання 3
 class Car:
 
@@ -115,6 +120,8 @@ print(f"Car 1 < Car 2? {car1 < car2}")
 print(f"Car 1 + Car 2: {car1 + car2}")
 
 car1.start_engine()
+
+
 # Завдання 4
 class Book:
 
