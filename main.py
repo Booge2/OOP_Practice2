@@ -137,7 +137,7 @@ class Book:
         return self.title < other.title
 
     def __add__(self, other):
-        return f"{self.title} ({self.author}) + {other.title} ({other.author})"
+        return f"{self.title} ({self.author}, {self.genre}) + {other.title} ({other.author}, {self.genre})"
 
     def __str__(self):
         return f"{self.title} {self.author} {self.genre}"
@@ -149,6 +149,6 @@ book2 = Book("Хроніки Нарнії", "К. С. Льюїс", "Фентез�
 print(f"Book 1: {book1}")
 print(f"Book 2: {book2}")
 
-print(f"Book 1 == Book 2? {book1 == book2}")
-print(f"Book 1 < Book 2? {book1 < book2}")
-print(f"Book 1 + Book 2: {book1 + book2}")
+print(f"Чи схожі назви двох книжо? {book1 == book2}")
+print(f"Чи правильни порядок книжок по алфавіту? {book1 < book2}")
+print(f"Додавання назв двох книжок: {book1 + book2}")
