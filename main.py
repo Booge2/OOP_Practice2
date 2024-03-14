@@ -115,9 +115,9 @@ car2 = Car("Nissan", "Skyline", 2003)
 print(f"Car 1: {car1}")
 print(f"Car 2: {car2}")
 
-print(f"Car 1 == Car 2? {car1 == car2}")
-print(f"Car 1 < Car 2? {car1 < car2}")
-print(f"Car 1 + Car 2: {car1 + car2}")
+print(f"Чи одинакові роки випуску? {car1 == car2}")
+print(f"Чи старша перша марка автомобіля за другу? {car1 < car2}")
+print(f"Ввивід двох назв автомобілів: {car1 + car2}")
 
 car1.start_engine()
 
